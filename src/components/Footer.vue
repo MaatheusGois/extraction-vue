@@ -1,0 +1,39 @@
+<template>
+    <!-- Footer -->
+    <footer class="sticky-footer bg-white">
+      <div class="container my-auto">
+        <p class="text-center mb-0">Apoiadores</p>
+        <div class="row text-center justify-content-center">
+          <a href="https://www.mackenzie.br/universidade/unidades-academicas/fci" target="_blank">
+            <div class="m-1 mt-4 mb-4 bg-mack-image"></div>
+          </a>
+          <a href="https://mackcloud.mackenzie.br/" target="_blank">
+            <div class="m-1 mt-4 mb-4 bg-mack-cloud-image"></div>
+          </a>
+          <a href="https://www5.each.usp.br/" target="_blank">
+            <div class="m-1 mt-4 mb-4 bg-each-image"></div>
+          </a>
+          <a href="http://ppgsi.each.usp.br/" target="_blank">
+            <div class="m-1 mt-4 mb-4 bg-ppgsi-image"></div>
+          </a>
+        </div>
+  
+        <div class="copyright text-center my-auto">
+          <span>Copyright &copy;<a href="https://github.com/MaatheusGois" target="_blank">Matheus Gois</a></span>
+          <span>&reg;<a href="https://github.com/ciberdem/sbc-extraction" target="_blank">Github</a></span>
+        </div>
+      </div>
+    </footer>
+    <!-- End of Footer -->
+  </template>
+  
+  <script>
+  export default {
+    // Se necessário, adicione lógica específica do componente aqui
+  };
+  </script>
+  
+  <style scoped>
+  /* Se necessário, adicione estilos específicos do componente aqui */
+  </style>
+  
