@@ -93,7 +93,7 @@
       results: {
         type: Array,
         required: true,
-        validator: (results) => results.every((result) => console.log(result) instanceof ResultDTO),
+        validator: (results) => results.every((result) => result instanceof ResultDTO),
       },
     },
   };

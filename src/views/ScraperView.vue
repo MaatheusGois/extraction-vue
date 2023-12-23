@@ -1,9 +1,11 @@
 <script setup>
 import ArchivesCheckbox from '@/components/ArchivesCheckbox.vue';
 import DateRangePicker from "@/components/DateRangePicker.vue";
-import LanguageCheckboxes from "@/components/LanguageCheckboxes.vue";
+import LanguageCheckbox from "@/components/LanguageCheckbox.vue";
 import ResultTable from '@/components/ResultTable.vue';
 import ResultDTO from '@/models/ResultDTO.js';
+import { ArchiveEnum } from '@/models/ArchiveEnum.js';
+import { LanguageEnum } from "@/models/LanguageEnum.js";
 </script>
 
 <template>
@@ -57,7 +59,7 @@ import ResultDTO from '@/models/ResultDTO.js';
             <DateRangePicker :forms="formsData" />
 
             <!-- Language -->
-            <LanguageCheckboxes :forms="formsData" />
+            <LanguageCheckbox :forms="formsData" />
 
             <button id="submit" type="submit" class="col-sm-4 btn btn-primary btn-user btn-block mt-4">
               Pesquisar
@@ -78,7 +80,7 @@ export default {
   components: {
     ArchivesCheckbox,
     DateRangePicker,
-    LanguageCheckboxes,
+    LanguageCheckbox,
     ResultTable,
   },
   data() {
@@ -88,10 +90,10 @@ export default {
       },
       formsData: {
         archives: [
-          "archiveIds%5B%5D=1"
+          ArchiveEnum.ANAIS_DE_EVENTOS
         ],
-        languageCheckboxes: [
-          "&field-10%5B%5D=por"
+        language: [
+          LanguageEnum.SPANISH
         ],
         initialDate: '21/11/2020',
         finalDate: '21/11/2021',
