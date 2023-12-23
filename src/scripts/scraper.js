@@ -137,7 +137,7 @@ class ExtractionService {
     async fetchData(url) {
         try {
             const response = await fetch();
-
+            console.log(response)
             return response.data;
         } catch (error) {
             throw new Error(`Error fetching data from ${url}: ${error.message}`);
