@@ -4,7 +4,9 @@ import { load } from 'cheerio';
 
 class ExtractionService {
 
-    constructor() { }
+    constructor() {
+        axios.defaults.headers.post['Content-Type'] ='application/x-www-form-urlencoded';
+     }
 
     async getAll(data) {
         const URL = this.createURL(data);
