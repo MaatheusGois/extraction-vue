@@ -20,7 +20,7 @@ class ExtractionService {
     }
 
     createURL(data) {
-        let URL = `/api?query=${encodeURIComponent(data.searchWord)}`;
+        let URL = `https://sol.sbc.org.br/busca/index.php/integrada/results?query=${encodeURIComponent(data.searchWord)}`;
 
         const archives = this.createArchives(data);
         if (archives !== "") {
@@ -136,7 +136,7 @@ class ExtractionService {
 
     async fetchData(url) {
         try {
-            const response = await fetch();
+            const response = await axios.get(url);
             console.log(response)
             return response.data;
         } catch (error) {
