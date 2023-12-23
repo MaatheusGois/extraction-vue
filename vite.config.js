@@ -8,23 +8,5 @@ export default {
       '@': fileURLToPath(new URL('./src', import.meta.url)),
     },
   },
-  base: process.env.NODE_ENV === 'production' ? '/extraction-vue/' : '/',
-  server: {
-    proxy: {
-      '/api': {
-        target: 'http://sol.sbc.org.br',
-        changeOrigin: true,
-        rewrite: (path) => path.replace(/^\/api/, '/busca/index.php/integrada/results'),
-      },
-    },
-  },
-  devServer: {
-    proxy: {
-      '/api': {
-        target: 'http://sol.sbc.org.br',
-        changeOrigin: true,
-        rewrite: (path) => path.replace(/^\/api/, '/busca/index.php/integrada/results'),
-      },
-    },
-  },
+  // base: process.env.NODE_ENV === 'production' ? '/extraction-vue/' : '/',
 };
