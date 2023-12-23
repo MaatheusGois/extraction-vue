@@ -57,12 +57,10 @@ export default {
       default: "fecha2",
     },
     startDateValue: {
-      type: String,
-      default: "initialDate",
+      type: String
     },
     endDateValue: {
-      type: String,
-      default: "finalDate",
+      type: String
     },
   },
   // ... outras configurações do componente DateRangePicker.vue

@@ -23,9 +23,6 @@
   }
 
   $(document).ready(function () {
-    $("#target").on("submit", function () {
-      $('#loaderModal').attr('style', 'display: flex !important')
-    });
 
     var today = new Date(new Date().getFullYear(), new Date().getMonth(), new Date().getDate());
     $('#startDate').datepicker({
