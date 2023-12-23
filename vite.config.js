@@ -21,4 +21,7 @@ export default {
       },
     },
   },
+  devServer: {
+    proxy: 'https://sol.sbc.org.br',
+  },
 }

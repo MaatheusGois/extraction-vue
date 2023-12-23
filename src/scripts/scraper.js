@@ -4,7 +4,7 @@ import { load } from 'cheerio';
 
 class ExtractionService {
 
-    constructor() {}
+    constructor() { }
 
     async getAll(data) {
         const URL = this.createURL(data);
@@ -117,7 +117,7 @@ class ExtractionService {
                         authors: $('span.name').text().trim().replace(/\t/g, "").replace(/\n\n/g, ', '),
                         abstract: $('div.abstract').text().trim().replace(/\t/g, "").replace(/Resumo\n/g, ''),
                         publicated: $('nav.cmp_breadcrumbs a').text().trim(),
-                        PDF:  $('a.obj_galley_link').attr('href'),
+                        PDF: $('a.obj_galley_link').attr('href'),
                         DOI: $('div.doi span.value a').attr('href'),
                         type: $('nav.cmp_breadcrumbs b').text().trim(),
                         url: url
