@@ -63,10 +63,5 @@ export default {
       type: String
     },
   },
-  // ... outras configurações do componente DateRangePicker.vue
 };
 </script>
-
-<style scoped>
-/* Adicione estilos específicos do componente aqui, se necessário */
-</style>

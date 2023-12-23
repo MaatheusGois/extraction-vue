@@ -28,12 +28,5 @@
 </template>
   
 <script>
-export default {
-    // Se necessário, adicione lógica específica do componente aqui
-};
+export default {};
 </script>
-  
-<style scoped>
-/* Se necessário, adicione estilos específicos do componente aqui */
-</style>
-  

@@ -1,5 +1,4 @@
 <script setup>
-// import { RouterView } from 'vue-router'
 import ScraperView from './views/ScraperView.vue'
 import Footer from './components/Footer.vue';
 </script>

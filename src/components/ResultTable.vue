@@ -87,8 +87,3 @@ export default {
     },
 };
 </script>
-  
-<style scoped>
-/* Adicione estilos específicos do componente aqui, se necessário */
-</style>
-  

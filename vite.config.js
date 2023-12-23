@@ -12,4 +12,13 @@ export default {
     },
   },
   base: process.env.NODE_ENV === 'production' ? '/extraction-vue/' : '/',
-};
+  server: {
+    proxy: {
+      '/api': {
+        target: 'https://sol.sbc.org.br',
+        changeOrigin: true,
+        rewrite: (path) => path.replace(/^\/api/, ''),
+      },
+    },
+  },
+}

@@ -1,6 +1,6 @@
 
 import axios from 'axios';
-import cheerio from 'cheerio';
+import { load } from 'cheerio';
 
 class ExtractionService {
 
@@ -90,7 +90,7 @@ class ExtractionService {
 
     async getNumberOfPages(URL) {
         const html = await this.fetchData(URL);
-        const $ = cheerio.load(html);
+        const $ = load(html);
         const numberOfArticles = $('div.articles_count').text().replace(/(\d+)\s+a\s+\d+\s+de\s+(\d+)\s+itens/, '$2');
 
         return Math.ceil(Number(numberOfArticles) / 25);
@@ -102,14 +102,14 @@ class ExtractionService {
         return new Promise(async (resolve, reject) => {
             try {
                 const htmlData = await this.fetchData(targetURL);
-                var $ = cheerio.load(htmlData);
+                var $ = load(htmlData);
 
                 const data = [];
 
                 for (const element of $('a.record_title')) {
                     const url = $(element).attr('href');
                     const pageHtml = await this.fetchData(url);
-                    var $ = cheerio.load(pageHtml);
+                    var $ = load(pageHtml);
 
                     const fetchConfig = {
                         title: $('h1').text().trim(),
