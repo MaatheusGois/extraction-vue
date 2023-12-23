@@ -4,9 +4,7 @@ import { load } from 'cheerio';
 
 class ExtractionService {
 
-    constructor() {
-        axios.defaults.headers.post['Content-Type'] ='application/x-www-form-urlencoded';
-     }
+    constructor() { }
 
     async getAll(data) {
         const URL = this.createURL(data);
@@ -22,7 +20,7 @@ class ExtractionService {
     }
 
     createURL(data) {
-        let URL = `https://sol.sbc.org.br/busca/index.php/integrada/results?query=${encodeURIComponent(data.searchWord)}`;
+        let URL = `/api?query=${encodeURIComponent(data.searchWord)}`;
 
         const archives = this.createArchives(data);
         if (archives !== "") {
@@ -138,7 +136,8 @@ class ExtractionService {
 
     async fetchData(url) {
         try {
-            const response = await axios.get(url);
+            const response = await fetch();
+
             return response.data;
         } catch (error) {
             throw new Error(`Error fetching data from ${url}: ${error.message}`);

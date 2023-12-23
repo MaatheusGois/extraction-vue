@@ -1,11 +1,8 @@
 import { fileURLToPath, URL } from 'node:url';
 import vue from '@vitejs/plugin-vue';
 
-// https://vitejs.dev/config/
 export default {
-  plugins: [
-    vue(),
-  ],
+  plugins: [vue()],
   resolve: {
     alias: {
       '@': fileURLToPath(new URL('./src', import.meta.url)),
@@ -15,13 +12,19 @@ export default {
   server: {
     proxy: {
       '/api': {
-        target: 'https://sol.sbc.org.br',
+        target: 'http://sol.sbc.org.br',
         changeOrigin: true,
-        rewrite: (path) => path.replace(/^\/api/, ''),
+        rewrite: (path) => path.replace(/^\/api/, '/busca/index.php/integrada/results'),
       },
     },
   },
   devServer: {
-    proxy: 'http://localhost',
+    proxy: {
+      '/api': {
+        target: 'http://sol.sbc.org.br',
+        changeOrigin: true,
+        rewrite: (path) => path.replace(/^\/api/, '/busca/index.php/integrada/results'),
+      },
+    },
   },
-}
+};
